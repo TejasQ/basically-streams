@@ -14,7 +14,7 @@ The hope is that the concept of streams within a browser would not be scary, cau
 
 ## Examples (work in progress)
 In the next few hours, I am to push examples of cool stream features, such as:
-- [Piping Streams](https://tejasq.github.io/basically-streams/)
+- Piping Streams ([Demo](https://tejasq.github.io/basically-streams/) | [Code](https://github.com/TejasQ/basically-streams/blob/master/index.js))
 - Backpressure
 - Chaining streams
 - Teeing (Forked streams)
