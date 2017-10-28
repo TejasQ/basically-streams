@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../basically.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Basically, Stream Backpressure 🌊</title>
+  </head>
+  <body>
+    <main>
+      <h1>Basically, Stream Backpressure </h1>
+      <p>Streams support a cool thing called <em>backpressure</em>. This amazing concept basically enables two-way communication within a stream, where the consumer of the stream can speak to its source and be like <em>HEY MAN SLOW DOWN I CAN'T PROCESS THINGS THAT FAST</em>.</p>
+      <p>Basically, you give a stream a <em>maxiumum number of things it can hold in its queue</em>, any more than that, and it says <em>dude, wait</em>.</p>
+      <p>Here's an example. Basically, we try and write to our <em>WritableStream</em> 5000 times in quick succession. Using the text input below, you can specify a <em>highWaterMark</em>, which is the point at which the WritableStream starts applying backpressure, saying <em>back off, bro</em>.</p>
+      <p>When you click <em>Start</em>, you should be able to see it all in action.</p>
+
+      <div class="backpressure-indicator" id="backpressure-indicator">Backpressure detected!</div>
+      <div class="bar">
+        <div class="bar-fill" id="bar-fill"></div>
+      </div>
+      <div class="controls">
+        <input type="text" id="queue-size" placeholder="Max in queue (default 1000)">
+        <button id="start-button">Start</button>
+      </div>
+
+      <p><strong>Further Reading:</strong> <a href="https://streams.spec.whatwg.org/">WhatWG Spec</a>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
