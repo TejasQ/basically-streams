@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../basically.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Basically, Streaming Fetch</title>
+  </head>
+  <body>
+    <main>
+      <h1>Basically, Streaming Fetch</h1>
+      <p>Historically, most progress bars for content loading type activity have been illusions: animations which fill up over a predetermined duration by the designer that do not actually relate to data being transferred at all. I've built some of these myself.</p>
+      <p>With ReadableStreams in the WHATWG's Fetch API, we're able to have <em>real deal</em> progress bars.</p>
+      <p>Check it out! Enter an Image URL below (preferably of a LARGE uncached image or something), and watch the progress bar <em>ACTUALLY REFLECT</em> the load status! This is so cool!</p>
+
+      <div class="data-copied">Data Copied!</div>
+      <div class="controls">
+        <input type="text" id="url-to-fetch" placeholder="Enter a URL here...">
+        <button id="fetch-button">Fetch</button>
+      </div>
+
+      <div class="bar">
+        <div class="bar-fill" id="bar-fill"></div>
+      </div>
+
+      <h2>Sample Links (click to copy)</h2>
+      <ul>
+        <li><input type="text" class="click-to-copy" value="https://upload.wikimedia.org/wikipedia/commons/e/e8/View_from_eiffel_tower_2nd_level.jpg"></li>
+        <li><input type="text" class="click-to-copy" value="https://upload.wikimedia.org/wikipedia/commons/3/3d/LARGE_elevation.jpg"></li>
+        <li><input type="text" class="click-to-copy" value="https://upload.wikimedia.org/wikipedia/commons/5/59/Panoramic_Large_and_Small_Magellanic_Clouds.jpg"></li>
+      </ul>
+
+      <p><strong>Further Reading:</strong> <a href="https://streams.spec.whatwg.org/">WhatWG Spec</a>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
