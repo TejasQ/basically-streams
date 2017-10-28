@@ -22,7 +22,7 @@ const startStream = () => {
   */
   const enqueueAndClose = (controller, character) => {
     controller.enqueue(character)
-    controller.close("lol")
+    controller.close()
   }
 
   /*
@@ -56,8 +56,8 @@ const startStream = () => {
               ? controller.enqueue(character) // Good! Add things to the stream and send away!
               : // Are we the last now? Cool, enqueue the last thing and close the stream!
                 enqueueAndClose(controller, character),
-          index * 50 // Do this every (index * 50) milliseconds
-        )
+          index * 50, // Do this every (index * 50) milliseconds
+        ),
       )
     },
   })

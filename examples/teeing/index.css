@@ -1,0 +1,13 @@
+.examples.examples__streaming {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+.example {
+  padding: var(--spacing);
+}
+
+.example_right {
+  background-color: #eee;
+}
