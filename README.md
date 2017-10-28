@@ -1,4 +1,4 @@
-# _Basically_, [https://streams.spec.whatwg.org](Streams) 🌊
+# _Basically_, [Streams](https://streams.spec.whatwg.org) 🌊
 So something (relatively) new and fun in browsers, are these two APIs: ReadableStream and WritableStream. 😮
 
 What they allow you to do, is basically send and receive chunks of _things_ progressively (that then combine into the final large _thing_), as opposed to moving around _entire things_ from server -> browser -> user.
