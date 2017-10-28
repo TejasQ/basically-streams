@@ -1,0 +1,48 @@
+html,
+body {
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  margin-top: 50px;
+  padding: calc(var(--spacing) * 2);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14);
+  background-color: white;
+}
+
+.data-copied {
+  visibility: hidden;
+  font-size: 11px;
+  font-weight: bold;
+  color: red;
+}
+
+.bar {
+  height: 8px;
+  margin-bottom: calc(var(--spacing) * 2);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.bar-fill {
+  width: 0;
+  height: 100%;
+  background: red;
+}
+
+.controls {
+  display: flex;
+  margin-top: var(--spacing);
+  margin-bottom: var(--spacing);
+}
+
+button {
+  flex: 0 1 100px;
+}
+
+code {
+  word-wrap: break-word;
+}
