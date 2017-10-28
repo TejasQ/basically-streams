@@ -1,0 +1,39 @@
+.bar {
+  height: 8px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.bar-fill {
+  width: 0;
+  height: 100%;
+  background: red;
+  transition: 0.3s width ease;
+}
+
+.backpressure-indicator {
+  margin-bottom: calc(var(--spacing) / 4);
+  visibility: hidden;
+  font-size: 11px;
+  font-weight: bold;
+  color: red;
+  animation: pulsate 1s ease infinite;
+}
+
+@keyframes pulsate {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.controls {
+  display: flex;
+  margin-top: var(--spacing);
+}

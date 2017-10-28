@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../basically.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Basically, Backpressure</title>
+  </head>
+  <body>
+    <main>
+      <h1>Basically, Backpressure</h1>
+      <p>Streams support a cool thing called <em>backpressure</em>. This amazing concept basically enables two-way communication within a stream, where the consumer of the stream can speak to its source and be like <em>HEY MAN SLOW DOWN I CAN'T PROCESS THINGS THAT FAST</em>.</p>
+      <p>Basically, you give a stream a <em>maxiumum number of things it can hold in its <a target="_blank" href="https://streams.spec.whatwg.org/#ws-model">underlying sink</a></em>, any more than that, and it says <em>dude, wait</em>.</p>
+      <p>Here's an example.</p>
+      <p>Basically, we try and write to our <em>WritableStream</em> 5000 times in quick succession. We've configured the WritableStream to only be able to handle 1000 things in its queue, using what is called a <em><a href="https://streams.spec.whatwg.org/#cqs-class" target="_blank">CountQueuingStrategy</a>'s highWaterMark</em>, which is the point at which the WritableStream starts applying backpressure, saying <em>back off, bro</em>.</p>
+      <p>When you click <em>Start</em>, you should be able to see it all in action. </p>
+      <p>Each time the progress bar stops, the WritableStream is applying backpressure.</p>
+
+      <div class="backpressure-indicator" id="backpressure-indicator"></div>
+      <div class="bar">
+        <div class="bar-fill" id="bar-fill"></div>
+      </div>
+      <div class="controls">
+        <button id="start-button">Start</button>
+      </div>
+
+      <p><strong>Further Reading:</strong> <a href="https://streams.spec.whatwg.org/">WhatWG Spec</a>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
