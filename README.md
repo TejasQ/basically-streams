@@ -5,7 +5,7 @@ What they allow you to do, is basically send and receive chunks of _things_ prog
 
 This is really cool.
 
-Streams have some fancy bells and whistles that we'll get to talk about in this project. I'll list them below, but I'd highly recommend starting with the root-level project ([index.html](https://github.com/TejasQ/basically-streams/blob/master/index.html), [index.js](https://github.com/TejasQ/basically-streams/blob/master/index.js), [index.css](https://github.com/TejasQ/basically-streams/blob/master/index.css), and moving into the examples from there.
+Streams have some fancy bells and whistles that we'll get to talk about in this project. I'll list them below, but I'd highly recommend starting with the root-level project ([index.html](https://github.com/TejasQ/basically-streams/blob/master/index.html), [index.js](https://github.com/TejasQ/basically-streams/blob/master/index.js), [index.css](https://github.com/TejasQ/basically-streams/blob/master/index.css)), and moving into the examples from there.
 
 ## Why?
 The answer to this question is _basically_ the same answer to _all the things_ in my "Basically" series: this project aims to explain streams to any level of developer: beginner, intermediate or advanced, focused primarly on the beginners.
