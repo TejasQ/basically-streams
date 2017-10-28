@@ -4,7 +4,7 @@ By design, streams work on the principle of _one source, one consumer_. So if yo
 
 Also known as forking streams, teeing refers to splitting one stream into two identical streams to be read by two distinct readers. It's pretty cool. Under the hood, tee() locks the source stream to the fork, creating two identical, unlocked streams ready for consumption.
 
-[Here's an example](https://tejasq.github.io/basically-streams/examples/teeing/) that, from a source stream that supplies employees in the shape of:
+[Here's an example](https://tejasq.github.io/basically-streams/examples/teeing/) that, from a source stream, supplies employees in the shape of:
 
 ```json
   { id: 1, name: "Something somethington" }
