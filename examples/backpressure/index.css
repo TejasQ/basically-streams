@@ -34,8 +34,6 @@
 }
 
 .controls {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: var(--spacing);
+  display: flex;
   margin-top: var(--spacing);
 }
