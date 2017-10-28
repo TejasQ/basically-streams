@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../basically.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Basically, Stream Teeing</title>
+  </head>
+  <body>
+    <main>
+      <h1>Basically, Stream Teeing</h1>
+      <p>By design, streams work on the principle of <em>one source, one consumer</em>. So if you have a stream that you'd like to be consumed by two consumers, you need help. Enter <a href="https://streams.spec.whatwg.org/#rs-tee" target="_blank">Teeing</a>.</p>
+      <p>Also known as forking streams, teeing refers to splitting one stream into two identical streams to be read by two distinct readers. It's pretty cool.</p>
+      <p>Under the hood, tee() locks the source stream to the fork, creating two identical, unlocked streams ready for consumption.</p>
+      <p>Below is an example that, from a source stream that supplies employees in the shape of:
+        <pre>
+<code>{ id: 1, name: "Something somethington" }</code>
+        </pre>
+        This stream is teed to two different streams: the `leftColumnStream` and the `rightColumnStream`.
+      </p>
+      <p>To read from these split streams, press the correponding button. It's that simple!</p>
+      <p>Don't forget to check out the <a href="https://tejasq.github.io/basically-streams/examples/teeing/index.js" target="_blank">source code</a>!</p>
+
+        <div class="examples">
+          <div class="examples examples__streaming">
+            <div class="examples__streaming example example_left">
+              <ul id="left-column-stream"></ul>
+              <button id="left-column-stream-button">Get ID from leftColumnStream</button>
+            </div>
+            <div class="examples__streaming example example_right">
+              <ul id="right-column-stream"></ul>
+              <button id="right-column-stream-button">Pipe names from rightColumnStream</button>
+            </div>
+          </div>
+        </div>
+
+        <p><strong>Further Reading:</strong> <a href="https://streams.spec.whatwg.org/">WhatWG Spec</a>
+      </main>
+      <script src="index.js"></script>
+  </body>
+</html>
