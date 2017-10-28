@@ -1,0 +1,129 @@
+/*
+  Gotta have the pretty, y'all. 💄
+*/
+
+:root {
+  --spacing: 16px;
+  --colors__main: #a63d40;
+  --colors__secondary: #0c6291;
+  --colors__disabled: #666;
+  --breakpoint__tablet: 768px;
+}
+
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 13px;
+}
+
+a:link,
+a:visited {
+  transition: 0.15s ease color;
+  color: var(--colors__main);
+}
+
+a:hover {
+  color: var(--colors__secondary);
+}
+
+@media screen and (min-width: var(--breakpoint__tablet)) {
+  html,
+  body {
+    margin: var(--spacing) 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: var(--spacing);
+}
+
+header,
+main {
+  margin: 0 auto;
+  max-width: 440px;
+}
+
+main {
+  padding: 20px;
+}
+
+header {
+  padding: var(--spacing);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+ul {
+  margin: calc(var(--spacing) * 2) 0 calc(var(--spacing) * 2) var(--spacing);
+  padding: 0;
+}
+
+li + li {
+  margin-top: var(--spacing);
+}
+
+@media screen and (min-width: var(--breakpoint__tablet)) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+p {
+  margin: var(--spacing) auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table__left {
+  width: 150px;
+}
+
+td {
+  padding: calc(var(--spacing)/4);
+  font-size: 1rem;
+}
+
+thead {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+button {
+  width: 100%;
+  padding: calc(var(--spacing)/2);
+  border: 0;
+  font-size: 1rem;
+  transition: 0.15s ease background-color;
+  cursor: pointer;
+  background-color: var(--colors__main);
+  color: white;
+  -webkit-appearance: none;
+}
+
+button:hover {
+  background-color: var(--colors__secondary);
+}
+
+button:disabled {
+  background-color: var(--colors__disabled);
+}
+
+input {
+  width: 100%;
+  font: inherit;
+}

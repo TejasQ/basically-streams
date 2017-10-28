@@ -1,0 +1,9 @@
+{
+  "name": "basically-streams",
+  "version": "1.0.0",
+  "description": "An introductory project to the relatively new stremaing APIs available in modern browsers.",
+  "main": "index.js",
+  "repository": "git@github.com:TejasQ/basically-streams.git",
+  "author": "Tejas Kumar <hello@tej.as>",
+  "license": "MIT"
+}

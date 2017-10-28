@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="basically.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Basically, Streams 🌊</title>
+  </head>
+  <body>
+    <main>
+      <h1>Basically, Streams 🌊</h1>
+      <p>So something (relatively) new and fun in browsers, are these two APIs: ReadableStream and WritableStream. 😮</p>
+      <p>What they allow you to do, is basically send and receive <em>chunks of things</em> progressively (that then combine into the final large thing), as opposed to moving around entire <em>things</em>.</p>
+
+        <p>Below is a living example of streaming vs. conventional transfer:</p>
+
+        <div class="examples">
+          <div class="examples examples__streaming">
+            <div class="examples__streaming example example_left">
+              <p id="text-to-move">I am a bunch of text who lives here, but I'm bored of living here so I want to move trololololololol.</p>
+              <button id="move-button">Move me!</button>
+            </div>
+            <div class="examples__streaming example example_right">
+              <p id="text-to-move_target"></p>
+            </div>
+          </div>
+        </div>
+
+        <h2>Pretty cool, huh?</h2>
+
+        <p>So basically, what's happening is this:
+          <ul>
+            <li>On load of this page, we construct a new ReadableStream</li>
+            <li>When we construct it, we say HEY, EVERY x SECONDS, TAKE A LETTER FROM THE LEFT COLUMN</li>
+            <li>And then we wait...</li>
+            <li>...until someone clicks MOVE ME</li>
+            <li>When someone clicks this button, we _pipe_ the content of the ReadableStream into a WritableStream</li>
+            <li>When the WritableStream receives data, we tell it to remove the character from the left column, and add it to the right one.</li>
+          </ul>
+        </p>
+        <p>All of this is visible in the source code (index.js). There's more cool things in the examples folder. Go, explore, have fun! Woooo!</p>
+
+        <p><strong>Further Reading:</strong> <a href="https://streams.spec.whatwg.org/">WhatWG Spec</a>
+      </main>
+      <script src="index.js"></script>
+  </body>
+</html>
