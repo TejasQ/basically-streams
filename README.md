@@ -12,7 +12,7 @@ The answer to this question is _basically_ the same answer to _all the things_ i
 
 The hope is that the concept of streams within a browser would not be scary, causing developers to shy away from it; but rather, that this concept would be dispalyed for how simple it really is, enabling developers to embrace it and run with it, allowing the creation beautiful, streamy things.
 
-## Examples (work in progress)
+## [Examples](https://github.com/TejasQ/basically-streams/blob/master/examples) (work in progress)
 In the next few hours, I am to push examples of cool stream features, such as:
 - Piping Streams ([Demo](https://tejasq.github.io/basically-streams/) | [Code](https://github.com/TejasQ/basically-streams/blob/master/index.js))
 - Backpressure
