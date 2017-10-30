@@ -5,7 +5,32 @@ body {
   height: 100vh;
 }
 
-main {
+/*
+  Streams don't even work on mobile afaik but yolo
+*/
+@media (min-width: 768px) {
+  main {
+    width: 100%;
+    max-width: 768px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--spacing);
+  }
+  .card-with-links-to-copy {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .card-with-actual-content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.card {
   margin-top: 50px;
   padding: calc(var(--spacing) * 2);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14);
@@ -35,7 +60,8 @@ main {
 
 .controls {
   display: flex;
-  margin-top: var(--spacing);
+  align-items: flex-end;
+  margin-top: 0;
   margin-bottom: var(--spacing);
 }
 
@@ -45,6 +71,17 @@ button {
 
 code {
   word-wrap: break-word;
+}
+
+label {
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 2;
+}
+
+.fetch-button {
+  flex-grow: 1;
+  margin-left: 16px;
 }
 
 .reset-button {

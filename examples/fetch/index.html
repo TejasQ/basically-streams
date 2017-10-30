@@ -8,15 +8,36 @@
   </head>
   <body>
     <main>
+      <div class="card-with-links-to-copy">
+        <div class="card">
+          <h2>Sample Links (click to copy)</h2>
+          <ul>
+            <li><input type="text" class="click-to-copy" value="https://upload.wikimedia.org/wikipedia/commons/e/e8/View_from_eiffel_tower_2nd_level.jpg"></li>
+            <li><input type="text" class="click-to-copy" value="https://upload.wikimedia.org/wikipedia/commons/3/3d/LARGE_elevation.jpg"></li>
+            <li><input type="text" class="click-to-copy" value="https://upload.wikimedia.org/wikipedia/commons/5/59/Panoramic_Large_and_Small_Magellanic_Clouds.jpg"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card card-with-actual-content">
       <h1>Basically, Streaming Fetch</h1>
       <p>Historically, most progress bars for content loading type activity have been illusions: animations which fill up over a predetermined duration by the designer that do not actually relate to data being transferred at all. I've built some of these myself.</p>
-      <p>With ReadableStreams in the WHATWG's Fetch API, we're able to have <em>real deal</em> progress bars.</p>
+      <p>With ReadableStreams in the <a href="https://fetch.spec.whatwg.org/" target="_blank">WHATWG's Fetch API</a>, we're able to have <em>real deal</em> progress bars.</p>
       <p>Check it out! Enter an Image URL below (preferably of a LARGE uncached image or something), and watch the progress bar <em>ACTUALLY REFLECT</em> the load status! This is so cool!</p>
+
+      <p>Sample images are provided below, simply clip in the input field to copy the URL and paste it in the URL input field.</p>
 
       <div class="data-copied">Data Copied!</div>
       <div class="controls">
-        <input type="text" id="url-to-fetch" placeholder="Enter a URL here...">
-        <button id="fetch-button">Fetch</button>
+        <div>
+          <label for="url-to-fetch">URL to Fetch</label>
+          <input
+            id="url-to-fetch"
+            value="https://upload.wikimedia.org/wikipedia/commons/3/3d/LARGE_elevation.jpg"
+            type="text"
+            placeholder="Enter a URL here..."
+          >
+        </div>
+        <button class="fetch-button" id="fetch-button">Fetch</button>
         <button class="reset-button" id="reset-button">Reset</button>
       </div>
 
@@ -24,14 +45,8 @@
         <div class="bar-fill" id="bar-fill"></div>
       </div>
 
-      <h2>Sample Links (click to copy)</h2>
-      <ul>
-        <li><input type="text" class="click-to-copy" value="https://upload.wikimedia.org/wikipedia/commons/e/e8/View_from_eiffel_tower_2nd_level.jpg"></li>
-        <li><input type="text" class="click-to-copy" value="https://upload.wikimedia.org/wikipedia/commons/3/3d/LARGE_elevation.jpg"></li>
-        <li><input type="text" class="click-to-copy" value="https://upload.wikimedia.org/wikipedia/commons/5/59/Panoramic_Large_and_Small_Magellanic_Clouds.jpg"></li>
-      </ul>
-
       <p><strong>Further Reading:</strong> <a href="https://streams.spec.whatwg.org/">WhatWG Spec</a>
+      </div>
     </main>
     <script src="index.js"></script>
   </body>
