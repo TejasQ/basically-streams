@@ -2,6 +2,7 @@
 const fetchButton = document.querySelector("#fetch-button")
 const resetButton = document.querySelector("#reset-button")
 const barFill = document.querySelector("#bar-fill")
+const urlToFetch = document.querySelector("#url-to-fetch")
 
 // Called when `fetch` is clicked.
 const fetchURL = async () => {
@@ -10,7 +11,7 @@ const fetchURL = async () => {
   barFill.style.background = "red"
 
   // Get the URL.
-  const url = document.querySelector("#url-to-fetch").value
+  const url = urlToFetch.value
 
   // Fetch!
   fetch(url).then(response => {
@@ -61,3 +62,4 @@ document.querySelectorAll(".click-to-copy").forEach(element =>
 
 // Reset is essential
 resetButton.addEventListener("click", () => location.reload())
+urlToFetch.addEventListener("click", e => (e.target.value = ""))
