@@ -1,5 +1,6 @@
 // Get the DOM elements we interact with.
 const startButton = document.querySelector("#start-button")
+const resetButton = document.querySelector("#reset-button")
 const backpressureIndicator = document.querySelector("#backpressure-indicator")
 const doneIndicator = document.querySelector("#done-indicator")
 const progressBar = document.querySelector("#bar-fill")
@@ -29,14 +30,16 @@ const receiverStream = new WritableStream(
     close() {
       // Update the startButton
       startButton.innerHTML = "Stream Closed."
+
+      // Show the resetButton (thanks @ricea)
+      resetButton.style.display = "block"
     },
   },
-
   /*
     The second argument to the WritableStream constructor is the
     QueuingStrategy.
   */
-  backpressure,
+  backpressure
 )
 
 // We need an instance of this writer that we'll use.
@@ -64,8 +67,8 @@ const fill = async (limit = thingsToWrite, count = 0) => {
         setTimeout(() => {
           backpressureIndicator.style.visibility = "hidden"
           resolve(count)
-        }, 1000),
-      ),
+        }, 1000)
+      )
     )
 
     /*
@@ -98,3 +101,6 @@ startButton.addEventListener("click", () => {
   startButton.disabled = true
   fill()
 })
+
+// Simple reset
+resetButton.addEventListener("click", () => location.reload())
