@@ -40,5 +40,5 @@
 
 .reset-button {
   display: none;
-  margin-left: 16px;
+  margin-left: var(--spacing);
 }

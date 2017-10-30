@@ -81,10 +81,10 @@ label {
 
 .fetch-button {
   flex-grow: 1;
-  margin-left: 16px;
+  margin-left: var(--spacing);
 }
 
 .reset-button {
   display: none;
-  margin-left: 16px;
+  margin-left: var(--spacing);
 }
