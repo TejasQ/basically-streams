@@ -46,3 +46,8 @@ button {
 code {
   word-wrap: break-word;
 }
+
+.reset-button {
+  display: none;
+  margin-left: 16px;
+}

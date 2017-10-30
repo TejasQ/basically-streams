@@ -1,5 +1,6 @@
 // Get DOM elements to interact with.
 const fetchButton = document.querySelector("#fetch-button")
+const resetButton = document.querySelector("#reset-button")
 const barFill = document.querySelector("#bar-fill")
 
 // Called when `fetch` is clicked.
@@ -29,6 +30,7 @@ const fetchURL = async () => {
         // Update the UI so people know it's done.
         document.body.style.backgroundImage = `url(${url})`
         barFill.style.background = "green"
+        resetButton.style.display = "block"
         return
       }
 
@@ -54,5 +56,8 @@ document.querySelectorAll(".click-to-copy").forEach(element =>
     e.target.select()
     document.execCommand("copy")
     document.querySelector(".data-copied").style.visibility = "visible"
-  }),
+  })
 )
+
+// Reset is essential
+resetButton.addEventListener("click", () => location.reload())

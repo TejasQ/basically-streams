@@ -15,3 +15,7 @@
 h2 {
   margin-top: 40px;
 }
+
+.reset-button {
+  display: none;
+}

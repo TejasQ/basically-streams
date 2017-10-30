@@ -1,6 +1,9 @@
 // Get the text content.
 const textToMove = document.querySelector("#text-to-move").textContent
+
+// Get DOM things to interact with
 const moveButton = document.querySelector("#move-button")
+const resetButton = document.querySelector("#reset-button")
 
 const startStream = () => {
   /*
@@ -56,8 +59,8 @@ const startStream = () => {
               ? controller.enqueue(character) // Good! Add things to the stream and send away!
               : // Are we the last now? Cool, enqueue the last thing and close the stream!
                 enqueueAndClose(controller, character),
-          index * 50, // Do this every (index * 50) milliseconds
-        ),
+          index * 50 // Do this every (index * 50) milliseconds
+        )
       )
     },
   })
@@ -102,6 +105,7 @@ const receiverStream = new WritableStream({
     // WOOOO
     moveButton.disabled = true
     moveButton.innerHTML = "Now <em>I'm</em> lonely :("
+    resetButton.style.display = "block"
     console.log("%c STREAM CLOSED WOOO!", "color:#0af;font-size:20px")
   },
 })
@@ -111,3 +115,4 @@ const receiverStream = new WritableStream({
   that starts the stream and pipes it into our receiver WritableStream.
 */
 moveButton.addEventListener("click", () => startStream().pipeTo(receiverStream))
+resetButton.addEventListener("click", () => location.reload())

@@ -3,6 +3,7 @@ const leftColumnStreamTarget = document.querySelector("#left-column-stream")
 const rightColumnStreamTarget = document.querySelector("#right-column-stream")
 const leftColumnStreamButton = document.querySelector("#left-column-stream-button")
 const rightColumnStreamButton = document.querySelector("#right-column-stream-button")
+const resetButton = document.querySelector("#reset-button")
 
 // Here's the dummy stream data.
 const employees = [
@@ -79,6 +80,6 @@ const writeToLeftColumn = async () => {
 
 // Finally, hook everything up by adding event listeners.
 leftColumnStreamButton.addEventListener("click", () => writeToLeftColumn())
-rightColumnStreamButton.addEventListener("click", () =>
-  rightColumnStream.pipeTo(rightColumnWriteStream),
-)
+rightColumnStreamButton.addEventListener("click", () => rightColumnStream.pipeTo(rightColumnWriteStream))
+
+resetButton.addEventListener("click", () => location.reload())

@@ -37,3 +37,8 @@
   display: flex;
   margin-top: var(--spacing);
 }
+
+.reset-button {
+  display: none;
+  margin-left: 16px;
+}
