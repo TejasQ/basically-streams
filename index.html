@@ -31,15 +31,13 @@
 
         <p>So basically, what's happening is this:
           <ul>
-            <li>On load of this page, we construct a new ReadableStream</li>
-            <li>When we construct it, we say HEY, EVERY x SECONDS, TAKE A LETTER FROM THE LEFT COLUMN</li>
-            <li>And then we wait...</li>
-            <li>...until someone clicks MOVE ME</li>
-            <li>When someone clicks this button, we _pipe_ the content of the ReadableStream into a WritableStream</li>
-            <li>When the WritableStream receives data, we tell it to remove the character from the left column, and add it to the right one.</li>
+            <li>Someone clicks "Move me!"</li>
+            <li>We create a ReadableStream, whose source is the textContent of the left column</li>
+            <li>The stream removes and queues each letter, one by one, every few milliseconds</li>
+            <li>This stream is <em>piped</em> into a `receiverStream`, that writes it to the right column.</li>
           </ul>
         </p>
-        <p>All of this is visible in the source code (index.js). There's more cool things in the examples folder. Go, explore, have fun! Woooo!</p>
+        <p>All of this is visible in the source code (<a href="https://github.com/TejasQ/basically-streams/blob/master/index.js">index.js</a>). There's more cool things in the examples folder. Go, explore, have fun! Woooo!</p>
 
         <h2>More Examples 🎉</h2>
         <ul>

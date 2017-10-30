@@ -1,5 +1,5 @@
-// Get the text content.
-const textToMove = document.querySelector("#text-to-move").textContent
+// Get the source div.
+const textToMove = document.querySelector("#text-to-move")
 
 // Get DOM things to interact with
 const moveButton = document.querySelector("#move-button")
@@ -10,7 +10,7 @@ const startStream = () => {
     "I want to move" -> ["I", " ", "w", "a" ...]
     This turns the text into an array
   */
-  const charactersToMove = textToMove.split("")
+  const charactersToMove = textToMove.textContent.split("")
 
   /*
     A function to help us know if we're on the last element of this array.
@@ -19,13 +19,13 @@ const startStream = () => {
   const isLast = index => length => index === length - 1
 
   /*
-    We'll call this function LAST in our stream.
-    Basically, do something (enqueue, more about that in a second)
-    and CLOSE THE STREAM!
+    Removes a character from the left column and
+    moves it (enqueues it) into the stream, to be piped to the
+    right column. (Thanks, @ricea)
   */
-  const enqueueAndClose = (controller, character) => {
+  const removeAndEnqueue = (controller, character) => {
+    textToMove.innerHTML = textToMove.textContent.replace(character, "")
     controller.enqueue(character)
-    controller.close()
   }
 
   /*
@@ -53,13 +53,21 @@ const startStream = () => {
       charactersToMove.forEach((character, index) =>
         // Set a timeout,
         setTimeout(
-          () =>
-            // with this function that checks
-            !isLast(index)(charactersToMove.length) // are we NOT the last?
-              ? controller.enqueue(character) // Good! Add things to the stream and send away!
-              : // Are we the last now? Cool, enqueue the last thing and close the stream!
-                enqueueAndClose(controller, character),
-          index * 50 // Do this every (index * 50) milliseconds
+          // With this function that,
+          () => {
+            /*
+              Removes and enqueues a character into the stream (for relocation),
+              see line 26.
+            */
+            removeAndEnqueue(controller, character)
+
+            // If we're at the last character,
+            if (isLast(index)(charactersToMove.length)) {
+              // Close the stream
+              controller.close()
+            }
+          },
+          index * 50 // Do this every (`index` * 50) milliseconds
         )
       )
     },
@@ -86,15 +94,6 @@ const receiverStream = new WritableStream({
   write(data) {
     // Create a text node,
     const textNode = document.createTextNode(data)
-
-    /*
-      Overwrite the HTML of the "I'm so bored I want to move" div
-      with the same text, but without this character we have just
-      received as `data` in the argument here.
-    */
-    document.querySelector("#text-to-move").innerHTML = document
-      .querySelector("#text-to-move")
-      .textContent.replace(data, "")
 
     // Add the same character to the other box.
     document.querySelector("#text-to-move_target").appendChild(textNode)
