@@ -1,7 +1,7 @@
 # Basically, [_(Really)_ Progressive Web App](https://server-stjntslidj.now.sh)s
 ![Lighthouse Report](https://tejasq.github.io/basically-streams/examples/streaming-pwa/lighthouse-report.png)
 
-### Disclaimer: the demo only works in browsers that support `ReadableStream`. I've opened #13 about it, but I haven't got around to adding it yet. Pull request welcome. :D
+### Disclaimer: the demo only works in browsers that support `ReadableStream`. I've opened [#13](https://github.com/TejasQ/basically-streams/issues/13) about it, but I haven't got around to adding it yet. Pull request welcome. :D
 
 This project contains a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app) ([see demo](https://server-stjntslidj.now.sh)) (PWA from this point on), that:
 
