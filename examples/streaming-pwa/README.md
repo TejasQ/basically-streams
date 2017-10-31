@@ -1,4 +1,4 @@
-# Basically, [_(Really)_ Progressive Web App](https://server-bqgfmiyvni.now.sh)s
+# Basically, [_(Really)_ Progressive Web App](https://server-xraftjkwoo.now.sh/)s
 ![Lighthouse Report](https://tejasq.github.io/basically-streams/examples/streaming-pwa/lighthouse-report.png)
 
 This project contains a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app) (PWA from this point on), that:
@@ -20,7 +20,7 @@ The even more interesting part is that if the repsonses are cached, the service 
 
 ## Getting Started
 
-There's a [live demo](https://server-bqgfmiyvni.now.sh) hosted on [now](https://now.sh/) that you can check out. If you'd like to run it locally, it's as simple as:
+There's a [live demo](https://server-xraftjkwoo.now.sh/) hosted on [now](https://now.sh/) that you can check out. If you'd like to run it locally, it's as simple as:
 
 - `git clone git@github.com:TejasQ/basically-streams.git`
 - `cd basically-streams/examples/streaming-pwa`
