@@ -1,4 +1,4 @@
-# Basically, [_really_ Progressive Web App](https://server-bqgfmiyvni.now.sh)s
+# Basically, [_(Really)_ Progressive Web App](https://server-bqgfmiyvni.now.sh)s
 ![Lighthouse Report](https://tejasq.github.io/basically-streams/examples/streaming-pwa/lighthouse-report.png)
 
 This project contains a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app) (PWA from this point on), that:
