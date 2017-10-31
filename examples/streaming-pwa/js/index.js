@@ -14,8 +14,8 @@ const getBooks = () => {
   // Make a note of the start time.
   const start = performance.now()
 
-  // Fetch stuff.
-  fetch(`/books/${searchField.value}`).then(response => {
+  // Fetch stuff. We use toLowerCase() to get a cached response if the text is the same but with different case.
+  fetch(`/books/${searchField.value.toLowerCase()}`).then(response => {
 
     // Make a note of when we get the Response object.
     let firstResponse = performance.now()
