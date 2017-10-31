@@ -1,7 +1,7 @@
 # Basically, [_(Really)_ Progressive Web App](https://server-krqtuuxdtr.now.sh/)s
 ![Lighthouse Report](https://tejasq.github.io/basically-streams/examples/streaming-pwa/lighthouse-report.png)
 
-This project contains a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app) (PWA from this point on), that:
+This project contains a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app) ([see demo](https://server-krqtuuxdtr.now.sh/)) (PWA from this point on), that:
 
 - Caches data, and
 - Works offline
