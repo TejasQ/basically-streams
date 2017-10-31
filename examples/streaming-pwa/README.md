@@ -35,4 +35,5 @@ This is part of my _Basically_ series that seeks to make concepts that could be 
 
 I hope this helped you. :)
 
-PS: the 2 points I lost on the Lighthouse Report above are because the CSS and JS are large and well documented. A trade-off I am happy to make. Go check out the source code!
+## PS:
+The 2 points I lost on the [Lighthouse Report](https://developers.google.com/web/tools/lighthouse/) above are because the CSS and JS are large and well documented. A trade-off I am happy to make. Go check out the source code!
