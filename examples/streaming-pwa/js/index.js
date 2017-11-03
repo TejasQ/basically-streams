@@ -4,23 +4,18 @@
 const searchField = document.querySelector("#search-field")
 const searchButton = document.querySelector("#search-button")
 const resultsContainer = document.querySelector("#results")
+const errorMessage = document.querySelector("#error")
 
-// Quit if the browser doesn't support WritableStream
-if( window.WritableStream === undefined ){
-  
-  // oh no
-  console.log("Oops! Your current browser doesn't support streaming :(")
+// Check if the browser doesn't support streaming
+if( typeof ReadableStream == 'undefined' ||
+    typeof WritableStream == 'undefined' ){
+  // If it doesn't, then:
 
-  // Alert the user via dangerously set inner html
-  resultsContainer.innerHTML = `
-    <div class="error-message">
-      <h2>Oops</h2>
-      <p>Your current browser doesn't support streaming :(</p>
-    </div>
-  `
+  // Alert the user by showing an error message
+  errorMessage.classList.remove("hidden")
 
   // Stop execution
-  throw new Error("Browser does not support streaming");
+  throw new Error("Browser does not support streaming")
 }
 
 // A function to get our books.

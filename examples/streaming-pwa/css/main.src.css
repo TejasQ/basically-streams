@@ -140,9 +140,14 @@ button:hover {
   text-align: left;
 }
 
-.error-message {
-  display: flex;
+#error {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  display: flex;
+  padding-top: 330px;
+}
+
+#error.hidden {
+  display: none;
 }
