@@ -139,3 +139,15 @@ button:hover {
   padding: 26px;
   text-align: left;
 }
+
+#error {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  padding-top: 330px;
+}
+
+#error.hidden {
+  display: none;
+}

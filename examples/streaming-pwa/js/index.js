@@ -4,6 +4,19 @@
 const searchField = document.querySelector("#search-field")
 const searchButton = document.querySelector("#search-button")
 const resultsContainer = document.querySelector("#results")
+const errorMessage = document.querySelector("#error")
+
+// Check if the browser doesn't support streaming
+if( typeof ReadableStream == 'undefined' ||
+    typeof WritableStream == 'undefined' ){
+  // If it doesn't, then:
+
+  // Alert the user by showing an error message
+  errorMessage.classList.remove("hidden")
+
+  // Stop execution
+  throw new Error("Browser does not support streaming")
+}
 
 // A function to get our books.
 const getBooks = () => {

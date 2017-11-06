@@ -15,6 +15,10 @@ const App = () => (
         <button id="search-button">Find</button>
       </div>
     </div>
+    <div id="error" className="hidden">
+      <h2>Oops</h2>
+      <p>Your current browser doesn't support streaming :(</p>
+    </div>
     <div id="results" className="results-container" />
   </main>
 )
