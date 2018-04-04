@@ -40,7 +40,9 @@ const fetchURL = async () => {
       barFill.style.width = `${received / length * 100}%`
 
       // Keep reading, and keep doing this AS LONG AS IT'S NOT DONE.
-      reader.read().then(onReadChunk)
+      if (!chunk.done) {
+        reader.read().then(onReadChunk)
+      }
     }
 
     // Do the first read().
