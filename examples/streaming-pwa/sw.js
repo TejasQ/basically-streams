@@ -68,7 +68,7 @@ this.addEventListener("fetch", async event => {
   const { request } = event
 
   // If we're looking for books,
-  if (request.url.indexOf("localhost:3000/books/") > -1) {
+  if (request.url.indexOf("/books/") > -1) {
     const headers = new Headers({ "Content-Type": "text/html" })
     const response = new Response(makeBookStream(request), headers)
 
