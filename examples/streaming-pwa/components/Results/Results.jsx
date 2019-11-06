@@ -6,6 +6,7 @@ const Results = ({ results }) => (
   <div className="results">
     {results.map(result => (
       <Book
+        key={result.infoLink}
         link={result.infoLink}
         image={result.imageLinks && result.imageLinks.thumbnail}
         title={result.title}
