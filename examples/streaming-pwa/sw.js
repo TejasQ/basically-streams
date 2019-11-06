@@ -30,11 +30,14 @@ const makeBookStream = request => {
     // On start,
     start(controller) {
 
-      // This function processes a stream coming in (from a Response object)
-      const processStream = response => {
+      // This function processes a ReadableStream (from Response.body)
+      const processStream = body => {
+
+        // no Response.body stream available
+        if (!body) return controller.close()
 
         // Get the reader.
-        const reader = response.getReader()
+        const reader = body.getReader()
 
         /*
           This function is called everytime the reader reads.
