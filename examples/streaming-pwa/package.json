@@ -9,7 +9,7 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "express": "^4.16.2",
-    "node-fetch": "^1.7.3",
+    "node-fetch": "^3.1.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.1"
   },
